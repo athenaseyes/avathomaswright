@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Official Cal Poly student evaluations of teaching for Ava Thomas Wright, with a three-year course-specific view and six-year aggregate results." />
+  <title>Student Evaluations of Teaching | Ava Thomas Wright</title>
+  <style>
+    :root {
+      --ink: #17201d;
+      --muted: #5b6762;
+      --green: #154734;
+      --green-2: #235f49;
+      --gold: #c69214;
+      --paper: #fbfcfa;
+      --card: #ffffff;
+      --line: #dfe6e2;
+      --soft: #eef4f0;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--green); }
+    .wrap { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.92);
+    }
+    .topbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .name { font-weight: 750; letter-spacing: .01em; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: .94rem; }
+    nav a { text-decoration: none; color: var(--muted); }
+    nav a:hover { color: var(--green); }
+
+    .hero {
+      padding: 78px 0 58px;
+      background:
+        radial-gradient(circle at 88% 15%, rgba(198,146,20,.12), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #f5f8f6 100%);
+    }
+    .eyebrow {
+      display: inline-block;
+      color: var(--green);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.35rem, 5vw, 4.45rem);
+      line-height: 1.03;
+      letter-spacing: -.03em;
+      font-weight: 700;
+    }
+    .lede {
+      margin: 22px 0 0;
+      max-width: 770px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .recent-label {
+      margin: 34px 0 0;
+      color: var(--green);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .headline-stats {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 20px 18px;
+      box-shadow: 0 8px 24px rgba(21,71,52,.04);
+    }
+    .stat strong {
+      display: block;
+      color: var(--green);
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat span { color: var(--muted); font-size: .9rem; }
+
+    main section { padding: 66px 0; }
+
+    h2 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      line-height: 1.15;
+    }
+    .section-intro { max-width: 790px; margin: 0 0 28px; color: var(--muted); }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .course {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(21,71,52,.035);
+    }
+    .course.featured { grid-column: 1 / -1; }
+    .course-code {
+      display: block;
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .course h3 { margin: 0 0 18px; font-size: 1.25rem; line-height: 1.25; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .metric {
+      background: var(--soft);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .metric b {
+      display: block;
+      font-size: 1.45rem;
+      line-height: 1.1;
+      color: var(--green);
+      font-variant-numeric: tabular-nums;
+    }
+    .metric small { display: block; color: var(--muted); margin-top: 5px; font-size: .78rem; }
+    .meta { color: var(--muted); font-size: .88rem; margin: 0; }
+    .course-effectiveness {
+      margin: 14px 0 0;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fafcfb;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+    .course-effectiveness strong { color: var(--ink); }
+    .dist-wrap { margin-top: 16px; }
+    .dist-label {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .distribution {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: .76rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .distribution th, .distribution td {
+      padding: 6px 5px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+    .distribution thead th { color: var(--muted); font-weight: 700; }
+    .distribution tbody th { color: var(--muted); text-align: left; font-weight: 700; }
+    .distribution td strong { display: block; color: var(--ink); font-size: .82rem; }
+    .distribution td span { display: block; color: var(--muted); font-size: .68rem; margin-top: 1px; }
+    .note {
+      margin-top: 13px;
+      padding-left: 12px;
+      border-left: 3px solid var(--gold);
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .alltime {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .summary-box {
+      background: var(--green);
+      color: #fff;
+      border-radius: 16px;
+      padding: 26px;
+    }
+    .summary-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    .summary-box .big {
+      display: block;
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .summary-value strong { display: block; }
+    .summary-box p { margin: 7px 0 0; color: rgba(255,255,255,.86); }
+    .recent-summary { max-width: 790px; margin-top: 14px; }
+    .recent-summary strong { color: #fff; }
+    .footnote {
+      margin: 22px 0 0;
+      max-width: 900px;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.5;
+    }
+    .footnote sup { color: var(--green); font-weight: 800; }
+    .summary-list { margin: 0; padding-left: 1.15rem; }
+    .summary-list li { margin-bottom: 10px; }
+
+
+    footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      font-size: .86rem;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    @media (max-width: 820px) {
+      .headline-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .courses { grid-template-columns: 1fr; }
+      .course.featured { grid-column: auto; }
+      .alltime { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .topbar { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      .hero { padding-top: 54px; }
+      .headline-stats { grid-template-columns: 1fr 1fr; }
+      .stat { padding: 16px; }
+      .stat strong { font-size: 1.65rem; }
+      .metrics { grid-template-columns: 1fr; }
+      .summary-pair { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="name">Ava Thomas Wright</div>
+      <nav aria-label="Page navigation">
+ <a href="#recent">Recent overall (three-years)</a>
+        <a href="#courses">Recent, by course</a>
+        <a href="#overall">All, overall (six-years)</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Official Cal Poly course evaluations</span>
+      <h1>Student Evaluations of Teaching</h1>
+      <p class="lede">
+        I teach philosophy at Cal Poly, including Ethics, Science &amp; Technology; Philosophy of Law;
+        Political Philosophy; Philosophical Research &amp; Writing; and advanced seminars, often in AI ethics.
+        The figures below summarize students' responses to Cal Poly's official question:
+        <strong>“Overall, this instructor was educationally effective.”</strong>
+        Course effectiveness uses the corresponding question:
+        <strong>“Overall, this course was educationally effective.”</strong>
+      </p>
+
+<section id="recent">
+      <p class="recent-label">Recent view</p>
+      <h2>Recent evaluations, overall (three-year window)</h2>
+      <p class="section-intro">
+        These figures cover the <strong>most recent three academic years</strong> since Fall 2023 through Spring 2026 for <strong>in-person and hybrid</strong> course sections. I no longer teach in the asynchronous format.<sup><a href="#async-footnote" aria-label="See note about asynchronous teaching"><strong>*</strong></a></sup>
+      </p>
+      <div class="summary-box recent-summary" aria-label="Recent evaluation summary">
+        <div class="summary-pair">
+          <div class="summary-value">
+            <span class="big">4.54 / 5</span>
+            <strong>Mean instructor effectiveness</strong>
+          </div>
+          <div class="summary-value">
+            <span class="big">5 / 5</span>
+            <strong>Median instructor effectiveness</strong>
+          </div>
+        </div>
+        <p>286 evaluation responses · 18 course sections</p>
+        <p>92.3% of instructor-effectiveness ratings were 4 or 5 out of 5.</p>
+        <p>Across the same sections, <strong>course effectiveness</strong> averaged <strong>4.44 / 5</strong>, with a <strong>5 / 5 median</strong>.</p>
+      </div>
+    </div>
+</section>
+  </section>
+
+
+    <section id="courses">
+      <div class="wrap">
+        <span class="eyebrow">For Prospective Students</span>
+        <h2>Recent evaluations, by course</h2>
+        <p class="section-intro">
+          These course summary breakdowns are provided primarily to help inform prospective students. Each course mean is weighted by the number of individual student responses, rather than by averaging course-section means equally.
+        </p>
+
+        <div class="courses">
+          <article class="course">
+            <span class="course-code">PHIL 300</span>
+            <h3>Philosophical Research &amp; Writing</h3>
+            <div class="metrics">
+              <div class="metric"><b>4.91 / 5</b><small>Mean instructor effectiveness</small></div>
+              <div class="metric"><b>5 / 5</b><small>Median instructor effectiveness</small></div>
+              <div class="metric"><b>100%</b><small>Ratings of 4 or 5</small></div>
+            </div>
+            <p class="meta">23 responses · 3 sections · 56.1% aggregate response rate</p>
+            <p class="course-effectiveness"><strong>Course effectiveness:</strong> 4.70 / 5 mean · 5 / 5 median · 95.7% rated 4 or 5</p>
+            <div class="dist-wrap">
+              <p class="dist-label">Distribution of instructor-effectiveness ratings</p>
+              <table class="distribution" aria-label="PHIL 300 rating distribution">
+                <thead><tr><th>Rating</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr></thead>
+                <tbody><tr><th>Responses</th><td><strong>21</strong><span>91.3%</span></td><td><strong>2</strong><span>8.7%</span></td><td><strong>0</strong><span>0%</span></td><td><strong>0</strong><span>0%</span></td><td><strong>0</strong><span>0%</span></td></tr></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="course">
+            <span class="course-code">PHIL 323</span>
+            <h3>Ethics, Science &amp; Technology</h3>
+            <div class="metrics">
+              <div class="metric"><b>4.48 / 5</b><small>Mean instructor effectiveness</small></div>
+              <div class="metric"><b>5 / 5</b><small>Median instructor effectiveness</small></div>
+              <div class="metric"><b>91.5%</b><small>Ratings of 4 or 5</small></div>
+            </div>
+            <p class="meta">188 responses · 10 sections · 63.9% aggregate response rate</p>
+            <p class="course-effectiveness"><strong>Course effectiveness:</strong> 4.36 / 5 mean · 5 / 5 median · 85.1% rated 4 or 5</p>
+            <div class="dist-wrap">
+              <p class="dist-label">Distribution of instructor-effectiveness ratings</p>
+              <table class="distribution" aria-label="PHIL 323 rating distribution">
+                <thead><tr><th>Rating</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr></thead>
+                <tbody><tr><th>Responses</th><td><strong>117</strong><span>62.2%</span></td><td><strong>55</strong><span>29.3%</span></td><td><strong>7</strong><span>3.7%</span></td><td><strong>7</strong><span>3.7%</span></td><td><strong>2</strong><span>1.1%</span></td></tr></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="course">
+            <span class="course-code">PHIL 333</span>
+            <h3>Political Philosophy</h3>
+            <div class="metrics">
+              <div class="metric"><b>4.67 / 5</b><small>Mean instructor effectiveness</small></div>
+              <div class="metric"><b>5 / 5</b><small>Median instructor effectiveness</small></div>
+              <div class="metric"><b>100%</b><small>Ratings of 4 or 5</small></div>
+            </div>
+            <p class="meta">12 responses · 1 section · 48.0% response rate</p>
+            <p class="course-effectiveness"><strong>Course effectiveness:</strong> 4.67 / 5 mean · 5 / 5 median · 100% rated 4 or 5</p>
+            <div class="dist-wrap">
+              <p class="dist-label">Distribution of instructor-effectiveness ratings</p>
+              <table class="distribution" aria-label="PHIL 333 rating distribution">
+                <thead><tr><th>Rating</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr></thead>
+                <tbody><tr><th>Responses</th><td><strong>8</strong><span>66.7%</span></td><td><strong>4</strong><span>33.3%</span></td><td><strong>0</strong><span>0%</span></td><td><strong>0</strong><span>0%</span></td><td><strong>0</strong><span>0%</span></td></tr></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="course">
+            <span class="course-code">PHIL 334</span>
+            <h3>Philosophy of Law</h3>
+            <div class="metrics">
+              <div class="metric"><b>4.52 / 5</b><small>Mean instructor effectiveness</small></div>
+              <div class="metric"><b>5 / 5</b><small>Median instructor effectiveness</small></div>
+              <div class="metric"><b>90.4%</b><small>Ratings of 4 or 5</small></div>
+            </div>
+            <p class="meta">52 responses · 3 sections · 55.9% aggregate response rate</p>
+            <p class="course-effectiveness"><strong>Course effectiveness:</strong> 4.50 / 5 mean · 5 / 5 median · 96.2% rated 4 or 5</p>
+            <div class="dist-wrap">
+              <p class="dist-label">Distribution of instructor-effectiveness ratings</p>
+              <table class="distribution" aria-label="PHIL 334 rating distribution">
+                <thead><tr><th>Rating</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr></thead>
+                <tbody><tr><th>Responses</th><td><strong>34</strong><span>65.4%</span></td><td><strong>13</strong><span>25.0%</span></td><td><strong>3</strong><span>5.8%</span></td><td><strong>2</strong><span>3.8%</span></td><td><strong>0</strong><span>0%</span></td></tr></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="course">
+            <span class="course-code">PHIL 439</span>
+            <h3>Advanced Seminar / Topics in Ethics &amp; Political Philosophy</h3>
+            <div class="metrics">
+              <div class="metric"><b>4.73 / 5</b><small>Mean instructor effectiveness</small></div>
+              <div class="metric"><b>5 / 5</b><small>Median instructor effectiveness</small></div>
+              <div class="metric"><b>90.9%</b><small>Ratings of 4 or 5</small></div>
+            </div>
+            <p class="meta">11 responses · 1 section · 45.8% response rate</p>
+            <p class="course-effectiveness"><strong>Course effectiveness:</strong> 4.73 / 5 mean · 5 / 5 median · 90.9% rated 4 or 5</p>
+            <div class="dist-wrap">
+              <p class="dist-label">Distribution of instructor-effectiveness ratings</p>
+              <table class="distribution" aria-label="PHIL 439 rating distribution">
+                <thead><tr><th>Rating</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr></thead>
+                <tbody><tr><th>Responses</th><td><strong>9</strong><span>81.8%</span></td><td><strong>1</strong><span>9.1%</span></td><td><strong>1</strong><span>9.1%</span></td><td><strong>0</strong><span>0%</span></td><td><strong>0</strong><span>0%</span></td></tr></tbody>
+              </table>
+            </div>
+            <p class="note">Recent seminars have often focused on AI ethics. Seminar enrollments are small, so the response count is included with the summary.</p>
+          </article>
+        </div>
+        <p class="footnote" id="async-footnote" role="doc-footnote"><sup>*</sup> After some experimenting in PHIL 323, I decided in Winter 2024 to stop teaching asynchronous courses because I found that the format compromises student engagement and the student–teacher relationship. I now also believe that ubiquitous AI makes it impossible to fully guard students against the moral hazard AI presents to academic integrity in asynchronous courses. Asynchronous evaluations were slightly though not dramatically lower (4.15/5 mean, 4/5 median, 81.5% rated 4 or 5, with only 30% response rate) and are included in the "all evaluations, overall (six years)" figures.</p>
+      </div>
+    </section>
+
+    <section id="overall">
+      <div class="wrap">
+        <span class="eyebrow">Longer view</span>
+        <h2>All evaluations, overall (six years)</h2>
+        <p class="section-intro">
+          These figures combine all available course evaluations since I started at Cal Poly in Fall 2020 through Spring 2026.
+        </p>
+
+        <div class="alltime">
+          <div class="summary-box">
+            <div class="summary-pair">
+              <div class="summary-value">
+                <span class="big">4.46 / 5</span>
+                <strong>Mean instructor effectiveness</strong>
+              </div>
+              <div class="summary-value">
+                <span class="big">5 / 5</span>
+                <strong>Median instructor effectiveness</strong>
+              </div>
+            </div>
+            <p>587 evaluation responses · 42 course sections · 53.6% aggregate response rate</p>
+            <p>90.8% of instructor-effectiveness ratings were 4 or 5 out of 5.</p>
+         <p>Across the same evaluations, <strong>course effectiveness</strong> averaged <strong>4.37 / 5</strong>, with a <strong>5 / 5 median</strong>; 87.7% of course-effectiveness ratings were 4 or 5 out of 5.</p>
+          </div>
+
+          <div>
+            <ul class="summary-list">
+              <li>Results are pooled from the underlying 1–5 student ratings, not computed by simply averaging section means.</li>
+              <li>The median is the median of individual student ratings.</li>
+              <li>“Responses” means completed course-evaluation responses, not necessarily distinct students across multiple courses.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <div class="wrap">Ava Thomas Wright · Student Evaluations of Teaching</div>
+  </footer>
+</body>
+</html>
